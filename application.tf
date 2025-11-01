@@ -114,11 +114,11 @@ resource "aws_launch_template" "this" {
 #######################
 
 resource "aws_autoscaling_group" "this" {
-  name                      = "cmtr-ghjc0xhd-asg"
-  max_size                  = 2
-  min_size                  = 1
-  desired_capacity          = 2
-  vpc_zone_identifier       = [data.aws_subnet.public_a.id, data.aws_subnet.public_b.id]
+  name                = "cmtr-ghjc0xhd-asg"
+  max_size            = 2
+  min_size            = 1
+  desired_capacity    = 2
+  vpc_zone_identifier = [data.aws_subnet.public_a.id, data.aws_subnet.public_b.id]
 
   launch_template {
     id      = aws_launch_template.this.id
